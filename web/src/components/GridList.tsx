@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
 /**
  * The example data is structured as follows:
  *
- * import image from 'path/to/image.jpg';
+ * import image from 'path/to/image.jpg'
  * [etc...]
  *
  * const tileData = [
