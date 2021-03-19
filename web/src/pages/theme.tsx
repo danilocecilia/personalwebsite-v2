@@ -10,6 +10,14 @@ const theme = createMuiTheme({
     },
   },
   overrides: {
+    MuiFormLabel: {
+      root: {
+        color: '#80f2db70',
+        '&$focused': {
+          'color': '#fff',
+        },
+      },
+    },
     MuiTypography: {
       colorPrimary: {
         color: '#fff',

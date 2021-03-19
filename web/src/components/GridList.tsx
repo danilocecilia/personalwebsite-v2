@@ -46,7 +46,10 @@ const useStyles = makeStyles((theme: Theme) =>
       // backgroundColor: theme.palette.background.paper,
     },
     gridList: {
-      width: 500,
+      width: 700,
+      marginLeft: '300px',
+      // paddingLeft: '5rem',
+      // paddingRight: '5rem',
     },
     icon: {
       color: 'rgba(255, 255, 255, 0.54)',
@@ -76,7 +79,7 @@ export default function TitlebarGridList() {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList}>
+      <GridList className={classes.gridList} spacing={10}>
         {/* <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div">December</ListSubheader>
         </GridListTile> */}

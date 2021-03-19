@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+    },
   },
   section_title: {
     display: 'flex',
@@ -29,6 +33,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingBottom: theme.spacing(15),
     position: 'relative',
 
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: theme.spacing(10),
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(10),
+    },
+
     '&::after': {
       content: '""',
       width: '70px',
@@ -36,9 +48,17 @@ const useStyles = makeStyles((theme: Theme) => ({
       position: 'absolute',
       background: theme.palette.primary.light,
       top: '185px',
+
+      [theme.breakpoints.down('xs')]: {
+        top: '230px',
+      },
     },
   },
-  section_content: {},
+  section_content: {
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+    },
+  },
   text_content: {
     '& h3': {
       fontSize: '20px',
@@ -49,8 +69,15 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: '18px',
       lineHeight: '2rem',
     },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '3rem',
+      height: '300px',
+    },
   },
   photo: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
     textAlign: 'center',
   },
 }))
@@ -72,10 +99,10 @@ export default function About() {
         <Grid container className={classes.section_content}>
           <Grid item xs={5} className={classes.photo}>
             <Image
-              src="https://avatars.githubusercontent.com/u/2642530?s=460&u=9f7504dc61463e614cf7852c80c3167763504ac7&v=4"
-              alt="Picture of the author"
-              width={250}
-              height={250}
+              src="/danilo_cecilia.png"
+              alt="Danilo Cecilia"
+              width={311}
+              height={397}
             />
           </Grid>
 

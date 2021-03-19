@@ -18,7 +18,7 @@ import Link from '@material-ui/core/Link'
 const useStyles = makeStyles((theme: Theme) => ({
   about: {
     background: theme.palette.primary.main,
-    height: 'calc(100vh - 64px)',
+    height: '100vh',
     display: 'flex',
     alignItems: 'center',
   },
@@ -27,6 +27,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     maxWidth: '230px',
     justifyContent: 'space-between',
+
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: '16px',
+    },
     '& > a': {
       display: 'flex',
       justifyContent: 'center',
@@ -44,20 +48,66 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   container: {
-    height: '400px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    height: '400px',
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center',
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      height: '500px',
+    },
   },
   aboutMe: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    height: '300px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
+
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center',
+      textAlign: 'center',
+    },
   },
   greetings: {
     display: 'flex',
     alignItems: 'baseline',
+
+    [theme.breakpoints.down('xs')]: {
+      '&>h3': {
+        fontSize: '2rem',
+      },
+      '&>h1': {
+        fontSize: '3rem',
+      },
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      '&>h3': {
+        fontSize: '3rem',
+      },
+      '&>h1': {
+        fontSize: '4rem',
+      },
+    },
+
+    [theme.breakpoints.up('md')]: {
+      '&>h3': {
+        fontSize: '4rem',
+      },
+      '&>h1': {
+        fontSize: '6rem',
+      },
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+    },
+
     '&>h3': {
       paddingRight: '1rem',
     },
@@ -68,11 +118,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   myPortfolio: {
     textAlign: 'center',
     width: '180px',
+
     '& > a': {
       display: 'block',
       border: `2px solid ${theme.palette.primary.light}`,
       padding: '1rem',
       borderRadius: '30px',
+
       '&:hover': {
         textDecoration: 'none',
         background: theme.palette.primary.light,
@@ -112,10 +164,10 @@ export function HomePage(): JSX.Element {
               consectetur inventore, quis iste reprehenderit quod doloribus,
               libero nam laudantium vero dolorem?
             </Typography>
-            <Typography variant="subtitle1" className={classes.myPortfolio}>
-              <Link href="#portfolio">My Portfolio</Link>
-            </Typography>
           </Box>
+          <Typography variant="subtitle1" className={classes.myPortfolio}>
+            <Link href="#portfolio">My Portfolio</Link>
+          </Typography>
         </Container>
       </section>
     )
