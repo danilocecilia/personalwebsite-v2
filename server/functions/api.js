@@ -18,8 +18,7 @@ app.use(
   })
 )
 
-const uri =
-  'mongodb+srv://admin:VawRwTiCjKb5@cluster0.8f1tm.mongodb.net/db_mypersonalws_v2?retryWrites=true&w=majority'
+const uri = process.env.DB_URI
 
 mongoose.connect(uri)
 mongoose.connection.once('open', () => {

@@ -4,6 +4,7 @@ const _ = require('lodash')
 const Profile = require('../models/profile')
 const Skill = require('../models/skill')
 const Portfolio = require('../models/portfolio')
+const SocialMedia = require('../models/socialMedia')
 
 const {
   GraphQLObjectType,
@@ -53,6 +54,14 @@ const PortfolioType = new GraphQLObjectType({
   }),
 })
 
+const SocialMediaType = new GraphQLObjectType({
+  name: 'Social',
+  fields: () => ({
+    name: { type: GraphQLString },
+    link: { type: GraphQLString },
+  }),
+})
+
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
@@ -74,6 +83,12 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(PortfolioType),
       resolve(parent, args) {
         return Portfolio.find({})
+      },
+    },
+    socials: {
+      type: new GraphQLList(SocialMediaType),
+      resolve(parent, args) {
+        return SocialMedia.find({})
       },
     },
   },
