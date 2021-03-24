@@ -1,5 +1,7 @@
 [build]
-
+  base    = "server"
+  publish = "server"
+ 
   # This is where our functions are located
   functions = "functions"
 
