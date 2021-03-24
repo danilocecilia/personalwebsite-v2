@@ -19,7 +19,7 @@ app.use(
 )
 
 const uri =
-  'mongodb+srv://admin:VawRwTiCjKb5@cluster0.8f1tm.mongodb.net/db_personalws_v2'
+  'mongodb+srv://admin:VawRwTiCjKb5@cluster0.8f1tm.mongodb.net/db_mypersonalws_v2'
 
 mongoose.connect(uri)
 mongoose.connection.once('open', () => {
