@@ -57,6 +57,7 @@ const PortfolioType = new GraphQLObjectType({
 const SocialMediaType = new GraphQLObjectType({
   name: 'Social',
   fields: () => ({
+    id: { type: GraphQLID },
     name: { type: GraphQLString },
     link: { type: GraphQLString },
   }),
