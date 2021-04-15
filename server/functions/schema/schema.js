@@ -72,6 +72,12 @@ const RootQuery = new GraphQLObjectType({
         return Profile.find({})
       },
     },
+    socials: {
+      type: new GraphQLList(SocialMediaType),
+      resolve(parent, args) {
+        return SocialMedia.find({})
+      },
+    },
     skills: {
       type: new GraphQLList(SkillType),
       args: { category: { type: GraphQLString } },
@@ -84,12 +90,6 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(PortfolioType),
       resolve(parent, args) {
         return Portfolio.find({})
-      },
-    },
-    socials: {
-      type: new GraphQLList(SocialMediaType),
-      resolve(parent, args) {
-        return SocialMedia.find({})
       },
     },
   },
