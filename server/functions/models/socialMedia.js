@@ -6,4 +6,4 @@ const socialMediaSchema = new Schema({
   link: String,
 })
 
-module.exports = mongoose.model('socialMedia', socialMediaSchema)
+module.exports = mongoose.model('social', socialMediaSchema)
